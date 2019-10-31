@@ -1,0 +1,45 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "extensions.ignoreRecommendations": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Dracula",
+  "window.zoomLevel": 0.5,
+  "workbench.sideBar.location": "left",
+  "breadcrumbs.enabled": false,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1A1A1A",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238"
+  },
+  "editor.fontSize": 14,
+  "editor.lineHeight": 0,
+  "editor.rulers": [
+    80
+  ],
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    }
+  ],
+  "editor.tabSize": 2,
+  "editor.renderLineHighlight": "gutter",
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.parameterHints.enabled": false,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all"
+}

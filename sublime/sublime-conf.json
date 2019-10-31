@@ -1,0 +1,22 @@
+{
+  "bold_folder_labels": false,
+  "color_scheme": "Packages/Agila Theme/Agila Monokai Extended.tmTheme",
+  "fade_fold_buttons": false,
+  "font_face": "",
+  "font_size": 13.5,
+  "highlight_line": false,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "tab_size": 2,
+  "theme": "Agila Monokai.sublime-theme",
+  "theme_agila_active_tab_entry_lightblue": true,
+  "theme_agila_camouflage": true,
+  "theme_agila_compact_sidebar": false,
+  "theme_agila_compact_tab": true,
+  "theme_agila_modified_tab_marker_lightblue": true,
+  "theme_agila_sidebar_light_icons": true,
+  "translate_tabs_to_spaces": true
+}
