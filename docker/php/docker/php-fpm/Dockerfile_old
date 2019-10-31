@@ -1,0 +1,32 @@
+FROM php:7.3.0-fpm-stretch
+LABEL tag="1.0"
+LABEL version="1.0"
+LABEL description="PHP fpm para usar com NGinx Server."
+LABEL maintainer="eduardoribeiro17@gmail.com"
+LABEL vendor="Rogério M. de Queiroz"
+WORKDIR /usr/share/nginx/html
+# Extensões PHP
+RUN docker-php-ext-install bcmath pdo_mysql mysqli opcache
+RUN apt update && apt upgrade -y \
+    && apt install -y libpq-dev libzip-dev zip \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql \
+    && docker-php-ext-configure zip --with-libzip \
+    && docker-php-ext-install zip
+# PHP Composer
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php -r "if (hash_file('sha384', 'composer-setup.php') === '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN mv composer.phar /usr/local/bin/composer
+# wkhtmltopdf
+RUN apt install xfonts-75dpi xfonts-base wkhtmltopdf -y && \
+  curl -L https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb --output wkhtmltopdf.deb && \
+  dpkg -i wkhtmltopdf.deb && \
+  rm -rf wkhtmltopdf.deb && \
+  apt clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm /var/log/lastlog /var/log/faillog
+RUN usermod -u 1000 www-data
+ENV SERVER_ADMIN ti@hfsaneamento.com.br

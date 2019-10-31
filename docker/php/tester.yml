@@ -1,0 +1,30 @@
+version: "3.2"
+services:
+  web_nginx:
+    container_name: teste_web
+    build:
+      context: ./docker/nginx
+    volumes:
+      - type: bind
+        source: ./project # Pasta do Projeto
+        target: /usr/share/nginx/html
+      - ./logs/nginx/:/var/log/nginx
+      - ./docker/nginx/sites/:/etc/nginx/sites-available
+      - ./docker/nginx/ssl/:/etc/nginx/ssl
+    ports:
+      - 80:80
+      - 443:443
+    # linkar o container WEB com o Container PHP
+    links:
+      - php_fpm
+    depends_on: 
+      - php_fpm
+  php_fpm:
+    container_name: teste_php
+    build: ./docker/php-fpm/
+    volumes:
+      - type: bind
+        source: ./project # Pasta do Projeto 
+        target: /usr/share/nginx/html
+      - ./docker/php-fpm/conf/php.ini-development:/usr/local/etc/php/php.ini
+    working_dir: /usr/share/nginx/html
