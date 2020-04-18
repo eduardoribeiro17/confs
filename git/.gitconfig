@@ -1,0 +1,30 @@
+[user]
+	email = eduardoribeiro17@gmail.com
+	name = Eduardo Ribeiro
+[alias]
+	st = status -sb
+	sf = show --name-only
+	ck = checkout
+	df = diff
+	dfs = diff --stat
+	ac = !git add -A && git commit
+	co = commit
+	pom = pull origin master
+	pu = pull
+	ps = push
+	lg = log --all --graph --decorate --oneline --abbrev-commit
+	lgp = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+	tags = tag -l
+	br = branch -a
+	remotes = remote -v
+	incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  unstage = reset HEAD --
+  undo = checkout --
+  rollback = reset --soft HEAD~1
+[color]
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	status = auto

@@ -1,45 +1,63 @@
 {
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Fira code",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
+  "editor.renderLineHighlight": "gutter",
+  "editor.suggestSelection": "first",
+  "editor.parameterHints.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
   "workbench.startupEditor": "newUntitledFile",
-  "extensions.ignoreRecommendations": false,
   "workbench.iconTheme": "material-icon-theme",
-  "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Dracula",
+
   "window.zoomLevel": 0.5,
+  "window.titleBarStyle": "custom",
+
+  "workbench.colorTheme": "Dracula",
+  "workbench.editor.labelFormat": "short",
   "workbench.sideBar.location": "left",
-  "breadcrumbs.enabled": false,
+  "workbench.editor.limit.value": 8,
   "workbench.colorCustomizations": {
     "statusBar.background": "#1A1A1A",
     "statusBar.noFolderBackground": "#212121",
-    "statusBar.debuggingBackground": "#263238"
+    "statusBar.debuggingBackground": "#ff0000"
   },
-  "editor.fontSize": 14,
-  "editor.lineHeight": 0,
-  "editor.rulers": [
-    80
-  ],
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    }
-  ],
-  "editor.tabSize": 2,
-  "editor.renderLineHighlight": "gutter",
+
+  "material-icon-theme.folders.associations": {
+    "handler": "controller",
+    "handlers": "controller",
+    "schemas": "mappings"
+  },
+
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "extensions.ignoreRecommendations": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "breadcrumbs.enabled": false,
+  "files.autoSave": "off",
+
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.suggest.autoImports": false,
+
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "editor.parameterHints.enabled": false,
-  "editor.formatOnSave": true,
-  "prettier.eslintIntegration": true,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
